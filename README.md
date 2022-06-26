@@ -1,6 +1,7 @@
 # capstoneproject
 
-PGPDSE Capstone Project repository
+## PGPDSE Capstone Project repository
+
 Teammates
 -- Ravi Shankar ravishankar.av2000@gmail.com
 -- Baskar Benjamin 	baskarbenjamin7@gmail.com
