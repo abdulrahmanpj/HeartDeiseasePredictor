@@ -1,0 +1,46 @@
+-- Dummy Encoding
+-- Normalization minmax scalar
+-- Train test split
+-- multiple models
+
+
+EDA_part - All Requried EDA_part
+
+v1- EDA_part   
+    Dummy Value Encoding of YES/NO columns
+    Ordinal Encoding of Ordinal Categories
+    Label Encodig of Race and Diabetic
+    tran test split
+    Basic DT Algorithm
+    best params
+    metrics
+
+v2- EDA_part   
+    Dummy Value Encoding of YES/NO columns
+    Ordinal Encoding of Ordinal Categories
+    Label Encodig of Race and Diabetic
+    DownScaling
+    tran test split
+    Basic DT Algorithm
+    best params
+    metrics
+    Basic XG Algorithm
+    metrics
+    Basic Naive Bayes Algorithm
+    metrics    
+
+v3- EDA_part   
+    Dummy Value Encoding of YES/NO columns
+    Ordinal Encoding of Ordinal Categories
+    Label Encodig of Race and Diabetic
+    DownScaling
+    tran test split
+    Basic DT Algorithm
+    best params
+    metrics
+    Basic XG Algorithm
+    metrics
+    Basic Naive Bayes Algorithm
+    metrics    
+    KNN
+    metrics
