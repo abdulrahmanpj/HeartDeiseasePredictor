@@ -1,0 +1,14 @@
+,Model,Accuracy,Precision,Percentage_mislabbled,Percent_Mislabbled_zeroes,Percent_Mislabbled_Ones,Recall_Score,F1_Score
+0,"DecisionTreeClassifier(class_weight={0: 1, 1: 100})",0.8765488390119347,0.8775256556442418,12.345116098806525,12.264775737645017,12.42518036368602,0.8757481963631398,0.8766360250145235
+1,"XGBClassifier(base_score=0.5, booster='gbtree', callbacks=None,
+              class_weight={0: 1, 1: 100}, colsample_bylevel=1,
+              colsample_bynode=1, colsample_bytree=1,
+              early_stopping_rounds=None, enable_categorical=False,
+              eval_metric=None, gamma=0, gpu_id=-1, grow_policy='depthwise',
+              importance_type=None, interaction_constraints='',
+              learning_rate=0.300000012, max_bin=256, max_cat_to_onehot=4,
+              max_delta_step=0, max_depth=6, max_leaves=0, min_child_weight=1,
+              missing=nan, monotone_constraints='()', n_estimators=100,
+              n_jobs=0, num_parallel_tree=1, predictor='auto', random_state=0,
+              reg_alpha=0, ...)",0.8659534692853967,0.8664214709465845,13.404653071460327,13.395222435370421,13.41405129839095,0.8658594870160905,0.8661403878223553
+2,"RandomForestClassifier(class_weight={0: 1, 1: 100})",0.9033649845543561,0.9028205332091375,9.663501544564387,9.768658079839225,9.558706388402102,0.904412936115979,0.903616033107651

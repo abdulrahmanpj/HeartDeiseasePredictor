@@ -1,0 +1,15 @@
+,Model,Accuracy,Precision,Percentage_mislabbled,Percent_Mislabbled_zeroes,Percent_Mislabbled_Ones,Recall_Score,F1_Score
+0,KNeighborsClassifier(),0.9089109123973701,0.46007953502600185,9.10890876026299,2.083161211892313,81.66747927840078,0.1833252072159922,0.26218077224788633
+1,LogisticRegression(),0.9147647179089863,0.5676709708273553,8.523528209101377,1.0669562241080175,85.53144807411019,0.1446855192588981,0.23059737736765423
+2,"XGBClassifier(base_score=0.5, booster='gbtree', callbacks=None,
+              colsample_bylevel=1, colsample_bynode=1, colsample_bytree=1,
+              early_stopping_rounds=None, enable_categorical=False,
+              eval_metric=None, gamma=0, gpu_id=-1, grow_policy='depthwise',
+              importance_type=None, interaction_constraints='',
+              learning_rate=0.300000012, max_bin=256, max_cat_to_onehot=4,
+              max_delta_step=0, max_depth=6, max_leaves=0, min_child_weight=1,
+              missing=nan, monotone_constraints='()', n_estimators=100,
+              n_jobs=0, num_parallel_tree=1, predictor='auto', random_state=0,
+              reg_alpha=0, reg_lambda=1, ...)",0.9149261279874316,0.5675430643699003,8.507387201256847,1.1259692896007176,84.73915163334958,0.15260848366650415,0.24053794428434197
+3,RandomForestClassifier(),0.911073807448537,0.4899125756556826,8.892619255146291,1.7904564070485205,82.24037055095076,0.17759629449049244,0.2606906423331544
+4,GaussianNB(),0.7440036155857572,0.22151943967981705,25.599638441424283,25.711992635169427,24.439297903461725,0.7556070209653828,0.342599756825467
