@@ -1,0 +1,33 @@
+ #   Column            Non-Null Count   Dtype  
+---  ------            --------------   -----  
+ 0   HeartDisease      319795 non-null  object 	(yes/no) (Dependant Feature, y)							-getdummies
+ 1   BMI               319795 non-null  float64 (Float value)											-standardscaler
+ 2   Smoking           319795 non-null  object 	(yes/no)      											-getdummies
+ 3   AlcoholDrinking   319795 non-null  object 	(yes/no)      											-getdummies
+ 4   Stroke            319795 non-null  object 	(yes/no)      											-getdummies
+ 5   PhysicalHealth    319795 non-null  float64 (value range from 0-30									-ordinalencoding
+												Now thinking about your physical health, 
+												which includes physical illness and injury, 
+												for how many days during the past 30)
+ 6   MentalHealth      319795 non-null  float64 (value range from 0-30 									-ordinalencoding
+												Thinking about your mental health, 						
+												for how many days during the past 30 days was 
+												your mental health not good? (0-30 days)
+ 7   DiffWalking       319795 non-null  object  (have serious difficulty walking or 			
+												climbing stairs? (yes/no))								-getdummies
+ 8   Sex               319795 non-null  object 	(Male/Female)											-getdummies	
+ 9   AgeCategory       319795 non-null  object  (Age as interval from 15 - >80, 13 						-ordinalencoding
+												categories)
+ 10  Race              319795 non-null  object 	(Divided into 5 groups White, 							-labelEncoding
+												Hispanic, Black, Asian and Other)
+ 11  Diabetic          319795 non-null  object  (yes, No, No Borderline Diabetic, Yes During Pregrnancy)-labelEncoding  
+ 12  PhysicalActivity  319795 non-null  object  (yes/no)												-getdummies
+ 13  GenHealth         319795 non-null  object 	(Divided into 5 groups Poor,					
+												Fair, Excellent, Good, Very good)						-ordinalEncoding
+ 14  SleepTime         319795 non-null  float64 (value range from 0-24)									-StandardScaler
+ 15  Asthma            319795 non-null  object  (yes/no)											
+ 16  KidneyDisease     319795 non-null  object 	(yes/no)												-getdummies
+ 17  SkinCancer        319795 non-null  object  (yes/no)												-getdummies
+
+
+-- No Missing values 

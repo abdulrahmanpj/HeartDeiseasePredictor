@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Disease Predictor</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Website Title -->
+
+  <div class="container">
+    <h2 class='container-heading'><span class="heading_font">Heart Disease Predictor</span></h2>
+    <div class='description'>
+      <p>A Machine Learning Web Application that predicits chances of having heart Disease or not, Built with Flask and Deployed using Heroku.</p><br>
+        <p>(Note:This model is 82.67% accurate)</p>
+    </div>
+  </div>
+
+  <!-- Text Area -->
+  <div class="ml-container">
+    <form action="{{ url_for('predict')}}" method="POST"> 
+
+      
+        <label for="age">Age</label>
+        <input type="text" id="age" name="age" placeholder="Your age.."><br>
+
+        <label for="sex">Sex</label>
+        <select id="sex" name="sex">
+          <option selected>----select option----</option>
+          <option value="1">Male</option>
+          <option value="0">Female</option>
+        </select><br>
+
+        <label for="height">Height (m)</label>
+        <input type="text" id="height" name="height" placeholder="Your current Height (m).."><br>
+
+        <label for="weight">Weight (Kg)</label>
+        <input type="text" id="weight" name="weight" placeholder="Your current Weight (Kg)."><br>
+
+        <label for="smoke">Do you Smoke</label>
+        <select id="smoke" name="smoke">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+        <label for="stroke">Have you ever had stroke?</label>
+        <select id="stroke" name="stroke">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+        <label for="alcohol">Do You Drink Alcohol?</label>
+        <select id="alcohol" name="alcohol">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+
+        <label for="physicalhealth">Have you ever had any injuries or physical pain in past 30 days? if yes for how many days you've suffered from it? </label>
+        <select id="physicalhealth" name="physicalhealth">
+          <option selected>----select option----</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+        </select><br>
+
+        <label for="mentalhealth">Have you ever suffered form andy depression in past 30 days? if yes for how many days you've suffered from it?</label>
+        <select id="mentalhealth" name="mentalhealth">
+          <option selected>----select option----</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+        </select><br>
+
+        <label for="diffwalking">Do you feel any difficulty in walking</label>
+        <select id="diffwalking" name="diffwalking">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+        <label for="diabetes">Do you have Diabetes? </label>
+        <select id="diabetes" name="diabetes">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+        <label for="asthma">Do you have Asthma? </label>
+        <select id="asthma" name="asthma">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+        <label for="kidneydisease">Do you have kidneydisease? </label>
+        <select id="kidneydisease" name="kidneydisease">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+        <label for="skincancer">Do you have SkinCancer? </label>
+        <select id="skincancer" name="skincancer">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+        <label for="physicalActivity">Do you physically exercise everyday?</label>
+        <select id="physicalActivity" name="physicalActivity">
+          <option selected>----select option----</option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+
+        <label for="Genhealth">What do you think about your General Health?</label>
+        <select id="Genhealth" name="Genhealth">
+          <option selected>----select option----</option>
+          <option value="5">Poor</option>
+          <option value="4">Fair</option>
+          <option value="3">Good</option>
+          <option value="2">VeryGood</option>
+          <option value="1">Excellent</option>
+        </select><br>
+
+
+        <label for="sleep">How many hours do you sleep a day?</label>
+        <select id="sleep" name="sleep">
+          <option selected>----select option----</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+
+        </select><br>
+
+      
+      <input type="submit" class="my-cta-button" value="Predict">
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <div class='footer'>
+    <div class="contact">
+      <a target="_blank" href="https://github.com/abdulrahmanpj/capstoneproject.git"><i
+          class="fab fa-github fa-lg contact-icon"></i></a>
+      <a target="_blank" href="https://www.linkedin.com/in/abdul-rahman-p-j-8946431b4/"><i
+          class="fab fa-linkedin fa-lg contact-icon"></i></a>
+    </div>
+    <p class='footer-description'>Made by Abdul Rahman.</p>
+  </div>
+
+</body>
+
+</html>
