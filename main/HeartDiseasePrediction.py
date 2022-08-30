@@ -5,8 +5,9 @@ import numpy as np
 
 # Load the Random Forest CLassifier model
 
-filename = 'stc.pkl'
-model = pickle.load(open(filename, 'rb'))
+file = open('model.pkl', 'rb')
+model = pickle.load(file)
+file.close()
 
 app = Flask(__name__)
 
