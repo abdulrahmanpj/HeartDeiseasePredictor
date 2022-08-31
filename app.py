@@ -6,7 +6,7 @@ import os
 
 # Load the CLassifier model
 
-file = open('C:\\Users\\Pj158\\OneDrive\\study materials\\PGP DSE\\Capstone_project\\capstoneproject\\model.pkl', 'rb')
+file = open('model.pkl', 'rb')
 model = pickle.load(file)
 file.close()
 
