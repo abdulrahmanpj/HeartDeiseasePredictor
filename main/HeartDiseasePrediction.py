@@ -2,10 +2,11 @@
 from flask import Flask, render_template, request
 import pickle
 import numpy as np
+import os
 
-# Load the Random Forest CLassifier model
+# Load the CLassifier model
 
-file = open('model.pkl', 'rb')
+file = open('C:\\Users\\Pj158\\OneDrive\\study materials\\PGP DSE\\Capstone_project\\capstoneproject\\model.pkl', 'rb')
 model = pickle.load(file)
 file.close()
 
@@ -21,33 +22,36 @@ def predict():
     if request.method == 'POST':
 
         age = int(request.form['age'])
-        sex = request.form.get('sex')
-        height = request.form.get('height')
-        weight = int(request.form['weight'])
-        smoke = int(request.form['smoke'])
-        stroke = request.form.get('stroke')
-        alcohol = int(request.form['alcohol'])
-        physicalhealth = int(request.form['physicalhealth'])
-        mentalhealth = request.form.get('mentalhealth')
-        diffwalking = float(request.form['diffwalking'])
-        diabetes = request.form.get('diabetes')
-        asthma = int(request.form['asthma'])
-        kidneydisease = request.form.get('kidneydisease')
-        skincancer = request.form.get('skincancer')
-        physicalActivity = request.form.get('physicalActivity')
-        Genhealth = request.form.get('Genhealth')
-        sleep = request.form.get('sleep')
+        sex = (request.form.get('sex'))
+        height = float(request.form['height'])
+        weight = float(request.form['weight'])
+        smoke = (request.form.get('smoke'))
+        stroke = (request.form.get('stroke'))
+        alcohol = (request.form.get('alcohol'))
+        physicalhealth = (request.form.get('physicalhealth'))
+        mentalhealth = (request.form.get('mentalhealth'))
+        diffwalking = (request.form.get('diffwalking'))
+        diabetes = (request.form.get('diabetes'))
+        asthma = (request.form.get('asthma'))
+        kidneydisease = (request.form.get('kidneydisease'))
+        skincancer = (request.form.get('skincancer'))
+        physicalActivity = (request.form.get('physicalActivity'))
+        Genhealth = (request.form.get('Genhealth'))
+        sleep = (request.form.get('sleep'))
         
         if height == 0:
             height = 1.69
+
         if weight == 0:
             weight = 65
 
 
         BMI = weight/(height**2)
-        Severity = sum(asthma, kidneydisease, skincancer, diabetes)
+        Severity = asthma + kidneydisease + skincancer + diabetes
 
-        if age>= 29:
+        AgeCategory25to29, AgeCategory30to34,AgeCategory35to39, AgeCategory40to44, AgeCategory45to49,AgeCategory50to54, AgeCategory55to59, AgeCategory60to64,AgeCategory65to69, AgeCategory70to74, AgeCategory75to79,AgeCategory80orolder = 0,0,0,0,0,0,0,0,0,0,0,0
+
+        if age <= 29:
             AgeCategory25to29 = 1
         elif (age >= 30) & (age>= 34):
             AgeCategory30to34 = 1
@@ -72,21 +76,24 @@ def predict():
         elif age >= 80:
             AgeCategory80orolder = 1
 
-        sleep = (sleep - 0) / (23)
-        physicalhealth = physicalhealth /30
-        mentalhealth = mentalhealth /30
-    
+        sleep = (int(sleep) - 0) / (23)
+        physicalhealth = int(physicalhealth) /30
+        mentalhealth = int(mentalhealth) /30
+        BMI = int(BMI) /95
+        Genhealth = int(Genhealth) / 5
+        Severity = int(Severity) / 4
+
         data = np.array([[BMI, physicalhealth, mentalhealth, Genhealth, sleep,
         Severity, smoke, alcohol, stroke,
         diffwalking, sex, AgeCategory25to29, AgeCategory30to34,
         AgeCategory35to39, AgeCategory40to44, AgeCategory45to49,
         AgeCategory50to54, AgeCategory55to59, AgeCategory60to64,
         AgeCategory65to69, AgeCategory70to74, AgeCategory75to79,
-        AgeCategory80orolder, physicalActivity]])
+        AgeCategory80orolder, physicalActivity]], dtype=float)
 
         my_prediction = model.predict(data)
         
-        return render_template('result.html', prediction=my_prediction)
+        return render_template('sub.html', prediction=my_prediction)
         
         
 
