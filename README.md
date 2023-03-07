@@ -1,7 +1,7 @@
 # capstoneproject
 
 ## PGPDSE Capstone Project repository
-# 🫀🩺❤️‍🩹 Heart Disease Prediction using ML
+#  Heart Disease Prediction using ML
 
 Teammates
 -- Ravi Shankar ravishankar.av2000@gmail.com
